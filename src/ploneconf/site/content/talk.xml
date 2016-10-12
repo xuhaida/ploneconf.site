@@ -22,8 +22,9 @@
       <max_length>2000</max_length>
       <title>Details</title>
     </field>
-    <field name="audience" type="zope.schema.Set"
-      form:widget="z3c.form.browser.checkbox.CheckBoxFieldWidget">
+    <field name="audience"
+           type="zope.schema.Set"
+           form:widget="z3c.form.browser.checkbox.CheckBoxFieldWidget">
       <description />
       <title>Audience</title>
       <value_type type="zope.schema.Choice">
@@ -33,6 +34,15 @@
           <element>Professionals</element>
         </values>
       </value_type>
+    </field>
+    <field name="room"
+           type="zope.schema.Choice"
+           form:widget="z3c.form.browser.radio.RadioFieldWidget"
+           security:write-permission="cmf.ReviewPortalContent">
+      <description></description>
+      <required>False</required>
+      <title>Room</title>
+      <vocabulary>ploneconf.site.vocabularies.Rooms</vocabulary>
     </field>
     <field name="speaker" type="zope.schema.TextLine">
       <description>Name (or names) of the speaker</description>

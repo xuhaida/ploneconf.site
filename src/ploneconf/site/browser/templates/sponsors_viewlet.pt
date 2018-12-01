@@ -4,7 +4,7 @@
          tal:define="sponsors python:view.sponsors();"
          tal:condition="sponsors">
         <div class="row">
-            <h2>We ❤ our sponsors</h2>
+            <h2 i18n:translate="">We love our sponsors</h2>
         </div>
         <div tal:repeat="level sponsors"
              tal:attributes="id python:'level-' + level"

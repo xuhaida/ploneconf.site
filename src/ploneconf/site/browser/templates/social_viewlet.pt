@@ -3,7 +3,8 @@
        class="lanyrd-link"
        tal:define="link view/lanyrd_link"
        tal:condition="link"
-       tal:attributes="href link">
+       tal:attributes="href link"
+       i18n:translate="">
          See this talk on Lanyrd!
     </a>
 </div>

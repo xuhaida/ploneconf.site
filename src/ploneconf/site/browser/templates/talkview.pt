@@ -10,7 +10,7 @@
             <span tal:content="context/type_of_talk">
                 Talk
             </span>
-            suitable for
+            <span i18n:translate="">suitable for</span>
             <span tal:replace="structure view/w/audience/render">
                 Audience
             </span>

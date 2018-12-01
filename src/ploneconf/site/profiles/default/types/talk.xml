@@ -20,17 +20,16 @@
  <property name="default_view_fallback">False</property>
  <property name="add_permission">cmf.AddPortalContent</property>
  <property name="klass">plone.dexterity.content.Container</property>
+ <property name="schema">ploneconf.site.content.talk.ITalk</property>
  <property name="behaviors">
   <element value="plone.app.dexterity.behaviors.metadata.IDublinCore"/>
   <element value="plone.app.content.interfaces.INameFromTitle"/>
   <element value="ploneconf.site.behaviors.social.ISocial"/>
-  <element value="ploneconf.site.interfaces.ITalk"/>
   <element value="plone.app.versioningbehavior.behaviors.IVersionable" />
   <element value="plone.app.event.dx.behaviors.IEventBasic"/>
  </property>
- <property name="schema"></property>
  <property name="model_source"></property>
- <property name="model_file">ploneconf.site.content:talk.xml</property>
+ <property name="model_file"></property>
  <property name="schema_policy">dexterity</property>
  <alias from="(Default)" to="(dynamic view)"/>
  <alias from="edit" to="@@edit"/>

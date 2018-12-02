@@ -5,6 +5,7 @@ from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
 from plone.dexterity.interfaces import IDexterityFTI
 from plone.testing.z2 import Browser
+from ploneconf.site.content.talk import ITalk
 from ploneconf.site.testing import PLONECONF_SITE_FUNCTIONAL_TESTING
 from ploneconf.site.testing import PLONECONF_SITE_INTEGRATION_TESTING
 from zope.component import createObject
@@ -28,19 +29,19 @@ class TalkIntegrationTest(unittest.TestCase):
         fti = queryUtility(IDexterityFTI, name='talk')
         schema = fti.lookupSchema()
         self.assertTrue(schema)
-        # self.assertEqual(ITalk, schema)
+        self.assertEqual(ITalk, schema)
 
     def test_factory(self):
         fti = queryUtility(IDexterityFTI, name='talk')
         factory = fti.factory
         talk = createObject(factory)
-        # self.assertTrue(ITalk.providedBy(talk))
+        self.assertTrue(ITalk.providedBy(talk))
         self.assertTrue(talk)
 
     def test_adding(self):
         self.portal.invokeFactory('talk', 'talk')
         self.assertTrue(self.portal.talk)
-        # self.assertTrue(ITalk.providedBy(self.portal.talk))
+        self.assertTrue(ITalk.providedBy(self.portal.talk))
 
 
 class TalkFunctionalTest(unittest.TestCase):

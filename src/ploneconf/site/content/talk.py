@@ -23,7 +23,7 @@ class ITalk(model.Schema):
         )
 
     details = RichText(
-        title=u'Details',
+        title=_(u'Details'),
         description=_(u'Description of the talk (max. 2000 characters)'),
         max_length=2000,
         required=False,
@@ -32,7 +32,6 @@ class ITalk(model.Schema):
     directives.widget(audience=CheckBoxFieldWidget)
     audience = schema.Set(
         title=_(u'Audience'),
-        description=u'',
         value_type=schema.Choice(
             source=RegistryValueVocabulary('ploneconf.audiences'),
             )
@@ -42,7 +41,6 @@ class ITalk(model.Schema):
     directives.write_permission(room='cmf.ManagePortal')
     room = schema.Choice(
         title=_(u'Room'),
-        description=u'',
         source=RegistryValueVocabulary('ploneconf.rooms'),
         required=False,
         )
@@ -61,13 +59,12 @@ class ITalk(model.Schema):
 
     image = NamedBlobImage(
         title=_(u'Image'),
-        description=u'',
+        description=_(u'Portrait of the speaker'),
         required=False,
         )
 
     speaker_biography = RichText(
         title=_(u'Speaker Biography'),
-        description=u'',
         max_length=1000,
         required=False,
         )

@@ -2,9 +2,9 @@
    If you want to learn more about writing documentation, please check out: http://docs.plone.org/about/documentation_styleguide.html
    This text does not appear on pypi or github. It is a comment.
 
-==============================================================================
+==============
 ploneconf.site
-==============================================================================
+==============
 
 Tell me what your product does
 

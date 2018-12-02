@@ -22,6 +22,7 @@ setup(
         "Environment :: Web Environment",
         "Framework :: Plone",
         "Framework :: Plone :: 5.0",
+        "Framework :: Plone :: 5.1",
         "Programming Language :: Python",
         "Programming Language :: Python :: 2.7",
         "Operating System :: OS Independent",
@@ -38,7 +39,8 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'plone.api',
+        # -*- Extra requirements: -*-
+        'plone.api>=1.8.4',
         'Products.GenericSetup>=1.8.2',
         'setuptools',
         'z3c.jbot',
@@ -57,5 +59,7 @@ setup(
     entry_points="""
     [z3c.autoinclude.plugin]
     target = plone
+    [console_scripts]
+    update_locale = ploneconf.site.locales.update:update_locale
     """,
 )

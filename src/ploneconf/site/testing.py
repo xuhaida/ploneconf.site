@@ -29,13 +29,13 @@ PLONECONF_SITE_FIXTURE = PloneconfSiteLayer()
 
 PLONECONF_SITE_INTEGRATION_TESTING = IntegrationTesting(
     bases=(PLONECONF_SITE_FIXTURE,),
-    name='PloneconfSiteLayer:IntegrationTesting'
+    name='PloneconfSiteLayer:IntegrationTesting',
 )
 
 
 PLONECONF_SITE_FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(PLONECONF_SITE_FIXTURE,),
-    name='PloneconfSiteLayer:FunctionalTesting'
+    name='PloneconfSiteLayer:FunctionalTesting',
 )
 
 
@@ -43,7 +43,7 @@ PLONECONF_SITE_ACCEPTANCE_TESTING = FunctionalTesting(
     bases=(
         PLONECONF_SITE_FIXTURE,
         REMOTE_LIBRARY_BUNDLE_FIXTURE,
-        z2.ZSERVER_FIXTURE
+        z2.ZSERVER_FIXTURE,
     ),
-    name='PloneconfSiteLayer:AcceptanceTesting'
+    name='PloneconfSiteLayer:AcceptanceTesting',
 )

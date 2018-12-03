@@ -51,9 +51,29 @@ class ITalk(model.Schema):
         required=False,
         )
 
+    company = schema.TextLine(
+        title=_(u'Company'),
+        required=False,
+        )
+
     email = Email(
         title=_(u'Email'),
         description=_(u'Email adress of the speaker'),
+        required=False,
+        )
+
+    website = schema.TextLine(
+        title=_(u'Website'),
+        required=False,
+        )
+
+    twitter = schema.TextLine(
+        title=_(u'Twitter name'),
+        required=False,
+        )
+
+    github = schema.TextLine(
+        title=_(u'Github username'),
         required=False,
         )
 
@@ -64,7 +84,17 @@ class ITalk(model.Schema):
         )
 
     speaker_biography = RichText(
-        title=_(u'Speaker Biography'),
+        title=_(u'Speaker Biography (max. 1000 characters)'),
         max_length=1000,
+        required=False,
+        )
+
+    slides = schema.TextLine(
+        title=_(u'URL of the Website that holds the slides'),
+        required=False,
+        )
+
+    video = schema.TextLine(
+        title=_(u'URL of the Website that holds the video of the talk'),
         required=False,
         )

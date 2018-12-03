@@ -76,4 +76,8 @@
     <value>False</value>
   </record>
 
+  <record name="plone.use_email_as_login">
+    <value>True</value>
+  </record>
+
 </registry>

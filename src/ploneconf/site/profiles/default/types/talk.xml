@@ -24,7 +24,6 @@
  <property name="behaviors">
   <element value="plone.app.dexterity.behaviors.metadata.IDublinCore"/>
   <element value="plone.app.content.interfaces.INameFromTitle"/>
-  <element value="ploneconf.site.behaviors.social.ISocial"/>
   <element value="plone.app.versioningbehavior.behaviors.IVersionable" />
   <element value="plone.app.event.dx.behaviors.IEventBasic"/>
  </property>

@@ -30,6 +30,7 @@ class ITalk(model.Schema):
         )
 
     directives.widget(audience=CheckBoxFieldWidget)
+    directives.write_permission(room='cmf.ManagePortal')
     audience = schema.Set(
         title=_(u'Audience'),
         value_type=schema.Choice(

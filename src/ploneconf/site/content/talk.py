@@ -26,7 +26,7 @@ class ITalk(model.Schema):
         title=_(u'Details'),
         description=_(u'Description of the talk (max. 2000 characters)'),
         max_length=2000,
-        required=False,
+        required=True,
         )
 
     directives.widget(audience=CheckBoxFieldWidget)
@@ -34,7 +34,8 @@ class ITalk(model.Schema):
         title=_(u'Audience'),
         value_type=schema.Choice(
             source=RegistryValueVocabulary('ploneconf.audiences'),
-            )
+            ),
+        required=False,
         )
 
     directives.widget(room=RadioFieldWidget)
@@ -89,11 +90,13 @@ class ITalk(model.Schema):
         required=False,
         )
 
+    directives.write_permission(room='cmf.ManagePortal')
     slides = schema.TextLine(
         title=_(u'URL of the Website that holds the slides'),
         required=False,
         )
 
+    directives.write_permission(room='cmf.ManagePortal')
     video = schema.TextLine(
         title=_(u'URL of the Website that holds the video of the talk'),
         required=False,

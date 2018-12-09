@@ -45,3 +45,13 @@ body.userrole-reviewer #formfield-form-widgets-IEventBasic-open_end {
     padding: 10px;
     border: 1px solid #ccc;
 }
+
+.speakerinfo img {
+    border-radius: 100%;
+    float: right;
+    margin: 0 0 6px 6px;
+}
+
+.speakerinfo h3 {
+    margin-top: 6px;
+}

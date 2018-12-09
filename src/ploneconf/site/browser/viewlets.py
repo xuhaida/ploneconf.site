@@ -8,6 +8,14 @@ from ploneconf.site.content.sponsor import LevelVocabulary
 from random import shuffle
 
 
+LEVEL_SIZE_MAPPING = {
+    'platinum': (500, 200),
+    'gold': (350, 150),
+    'silver': (200, 80),
+    'bronze': (150, 60),
+}
+
+
 class SocialViewlet(ViewletBase):
 
     def lanyrd_link(self):
@@ -31,10 +39,11 @@ class SponsorsViewlet(ViewletBase):
                 name='images',
                 context=obj,
                 request=self.request)
+            width, height = LEVEL_SIZE_MAPPING[obj.level]
             scale = scales.scale(
                 'logo',
-                width=200,
-                height=80,
+                width=width,
+                height=height,
                 direction='thumbnail')
             tag = scale.tag() if scale else None
             if not tag:

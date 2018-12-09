@@ -35,7 +35,7 @@ class SponsorsViewlet(ViewletBase):
                 'logo',
                 width=200,
                 height=80,
-                direction='down')
+                direction='thumbnail')
             tag = scale.tag() if scale else None
             if not tag:
                 # only display sponsors with a logo

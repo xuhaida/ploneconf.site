@@ -5,14 +5,14 @@
   <metal:content-core fill-slot="content-core">
 
   <metal:talklist define-macro="talklist">
-  <table class="listing"
+  <table class="listing pat-datatables"
          id="talks"
          tal:define="talks python:view.talks()">
     <thead>
       <tr>
         <th i18n:translate="">Title</th>
         <th i18n:translate="">Speaker</th>
-        <th i18n:translate="">Audience</th>
+        <th i18n:translate="">Type of talk</th>
         <th i18n:translate="">Time</th>
         <th i18n:translate="">Room</th>
       </tr>
@@ -32,11 +32,10 @@
         <td tal:content="python:talk['speaker']">
             Philip Bauer
         </td>
-        <td tal:content="python:talk['audience']">
+        <td tal:content="python:talk['type_of_talk']">
             Advanced
         </td>
         <td class="pat-moment"
-            data-pat-moment="format:calendar"
             tal:content="python:talk['start']">
             Time
         </td>

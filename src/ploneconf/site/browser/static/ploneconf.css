@@ -39,3 +39,9 @@ body.userrole-reviewer #formfield-form-widgets-IEventBasic-open_end {
 #content .event.summary {
     max-width: 50%;
 }
+
+.speakerinfo {
+    background-color: #eee;
+    padding: 10px;
+    border: 1px solid #ccc;
+}

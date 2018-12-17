@@ -52,8 +52,8 @@
             </div>
 
             <p class="userdata">
-                <span tal:define="twitter python: context.twitter.replace(u'@', u'')"
-                   tal:condition="python:twitter">
+                <span tal:define="twitter python: context.twitter.replace(u'@', u'') if context.twitter else None"
+                      tal:condition="python:twitter">
                     Twitter:
                     <a tal:attributes="href python:u'https://twitter.com/@' + twitter"
                        tal:content="python: '@' + twitter">

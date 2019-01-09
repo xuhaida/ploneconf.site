@@ -30,7 +30,7 @@ class ITalk(model.Schema):
         )
 
     directives.widget(audience=CheckBoxFieldWidget)
-    directives.write_permission(room='cmf.ManagePortal')
+    directives.write_permission(room='cmf.ReviewPortalContent')
     audience = schema.Set(
         title=_(u'Audience'),
         value_type=schema.Choice(
@@ -39,7 +39,7 @@ class ITalk(model.Schema):
         required=False,
         )
 
-    directives.write_permission(room='cmf.ManagePortal')
+    directives.write_permission(room='cmf.ReviewPortalContent')
     room = schema.Choice(
         title=_(u'Room'),
         source=RegistryValueVocabulary('ploneconf.rooms'),
@@ -90,19 +90,19 @@ class ITalk(model.Schema):
         required=False,
         )
 
-    directives.write_permission(room='cmf.ManagePortal')
+    directives.write_permission(room='cmf.ReviewPortalContent')
     slides = schema.TextLine(
         title=_(u'URL of the Website that holds the slides'),
         required=False,
         )
 
-    directives.write_permission(room='cmf.ManagePortal')
+    directives.write_permission(room='cmf.ReviewPortalContent')
     video = schema.TextLine(
         title=_(u'URL of the Website that holds the video of the talk'),
         required=False,
         )
 
-    directives.write_permission(hide_date='cmf.ManagePortal')
+    directives.write_permission(hide_date='cmf.ReviewPortalContent')
     hide_date = schema.Bool(
         title=_(u'Hide date and time'),
         description=_(u'Display talks without date and time.'),

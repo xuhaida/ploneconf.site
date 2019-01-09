@@ -5,7 +5,7 @@
     <metal:content-core fill-slot="content-core">
 
         <tal:eventsummary
-            tal:condition="python: context_state.workflow_state() == 'published'"
+            tal:condition="python: not context.hide_date"
             replace="structure context/@@event_summary"/>
 
         <p>

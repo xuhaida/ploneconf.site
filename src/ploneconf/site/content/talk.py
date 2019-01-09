@@ -101,3 +101,11 @@ class ITalk(model.Schema):
         title=_(u'URL of the Website that holds the video of the talk'),
         required=False,
         )
+
+    directives.write_permission(hide_date='cmf.ManagePortal')
+    hide_date = schema.Bool(
+        title=_(u'Hide date and time'),
+        description=_(u'Display talks without date and time.'),
+        required=False,
+        default=True,
+        )

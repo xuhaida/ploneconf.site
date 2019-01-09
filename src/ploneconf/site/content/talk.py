@@ -39,7 +39,6 @@ class ITalk(model.Schema):
         required=False,
         )
 
-    directives.widget(room=RadioFieldWidget)
     directives.write_permission(room='cmf.ManagePortal')
     room = schema.Choice(
         title=_(u'Room'),

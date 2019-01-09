@@ -14,7 +14,7 @@
             </strong>
         </p>
 
-        <p tal:condition="python:context.room">
+        <p tal:condition="python:context.room and context_state.workflow_state() == 'published'">
             <strong tal:content="structure view/w/room/label"/>:
             <span  tal:content="structure view/w/room/render"/>
         </p>

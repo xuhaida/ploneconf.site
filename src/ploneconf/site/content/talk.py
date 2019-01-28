@@ -5,7 +5,6 @@ from plone.namedfile.field import NamedBlobImage
 from plone.schema.email import Email
 from plone.supermodel import model
 from ploneconf.site import _
-from ploneconf.site.vocabularies import RegistryValueVocabulary
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from z3c.form.browser.radio import RadioFieldWidget
 from zope import schema
@@ -18,7 +17,7 @@ class ITalk(model.Schema):
     directives.widget(type_of_talk=RadioFieldWidget)
     type_of_talk = schema.Choice(
         title=_(u'Type of talk'),
-        source=RegistryValueVocabulary('ploneconf.types_of_talk'),
+        vocabulary='ploneconf.type_of_talk',
         required=True,
         )
 
@@ -34,7 +33,7 @@ class ITalk(model.Schema):
     audience = schema.Set(
         title=_(u'Audience'),
         value_type=schema.Choice(
-            source=RegistryValueVocabulary('ploneconf.audiences'),
+            vocabulary='ploneconf.audience',
             ),
         required=False,
         )
@@ -42,7 +41,7 @@ class ITalk(model.Schema):
     directives.write_permission(room='cmf.ReviewPortalContent')
     room = schema.Choice(
         title=_(u'Room'),
-        source=RegistryValueVocabulary('ploneconf.rooms'),
+        vocabulary='ploneconf.room',
         required=False,
         )
 

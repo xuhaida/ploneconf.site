@@ -23,7 +23,7 @@ class IPloneconfControlPanel(Interface):
         required=False,
     )
 
-    types_of_talk = schema.List(
+    type_of_talk = schema.List(
         title=_(u'Available types for talks'),
         default=[u'Talk', u'Training', u'Keynote', u'Lightning Talk'],
         missing_value=None,
@@ -31,7 +31,7 @@ class IPloneconfControlPanel(Interface):
         value_type=schema.TextLine(),
     )
 
-    rooms = schema.List(
+    room = schema.List(
         title=_(u'Available Rooms for the conference'),
         default=[u'101', u'201', u'Auditorium'],
         missing_value=None,
@@ -39,7 +39,7 @@ class IPloneconfControlPanel(Interface):
         value_type=schema.TextLine()
     )
 
-    audiences = schema.List(
+    audience = schema.List(
         title=_(u'Available audiences for talks'),
         default=[u'Beginner', u'Advanced', u'Professionals'],
         missing_value=None,

@@ -34,4 +34,16 @@
       factory=".setuphandlers.HiddenProfiles"
       name="ploneconf.site-hiddenprofiles" />
 
+  <utility
+      name="ploneconf.room"
+      component="ploneconf.site.vocabularies.RegistryValueVocabularyFactory" />
+
+  <utility
+      name="ploneconf.type_of_talk"
+      component="ploneconf.site.vocabularies.RegistryValueVocabularyFactory" />
+
+  <utility
+      name="ploneconf.audience"
+      component="ploneconf.site.vocabularies.RegistryValueVocabularyFactory" />
+
 </configure>

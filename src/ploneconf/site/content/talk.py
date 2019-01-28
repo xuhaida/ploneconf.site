@@ -30,7 +30,7 @@ class ITalk(model.Schema):
         )
 
     directives.widget(audience=CheckBoxFieldWidget)
-    directives.write_permission(room='cmf.ReviewPortalContent')
+    directives.write_permission(audience='cmf.ReviewPortalContent')
     audience = schema.Set(
         title=_(u'Audience'),
         value_type=schema.Choice(
@@ -90,13 +90,13 @@ class ITalk(model.Schema):
         required=False,
         )
 
-    directives.write_permission(room='cmf.ReviewPortalContent')
+    directives.write_permission(slides='cmf.ReviewPortalContent')
     slides = schema.TextLine(
         title=_(u'URL of the Website that holds the slides'),
         required=False,
         )
 
-    directives.write_permission(room='cmf.ReviewPortalContent')
+    directives.write_permission(video='cmf.ReviewPortalContent')
     video = schema.TextLine(
         title=_(u'URL of the Website that holds the video of the talk'),
         required=False,
